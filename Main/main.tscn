@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cmp713mk0q0u7"]
+
+[ext_resource type="Script" uid="uid://cp50ejfg82t4" path="res://Main/main.gd" id="1_eunhr"]
+[ext_resource type="Texture2D" uid="uid://b5k2mg86ncnue" path="res://fond/cookie_back2.png" id="2_eunhr"]
+[ext_resource type="FontFile" uid="uid://bh5m23dnwmlk1" path="res://police/Nunito-Bold.ttf" id="2_rj11h"]
+[ext_resource type="Shader" uid="uid://b3kivdra1en5u" path="res://low_shader.gdshader" id="3_liyct"]
+[ext_resource type="Texture2D" uid="uid://dxrcxl72cjer3" path="res://Main/cookie1.png" id="4_ib3t1"]
+[ext_resource type="Script" uid="uid://bormptrcrylsa" path="res://upgrade/upgrade.gd" id="5_k3v36"]
+[ext_resource type="Texture2D" uid="uid://mcma8jt6juuu" path="res://upgrade/upgrade1/paper_panel_355_x_1244.png" id="7_rj11h"]
+[ext_resource type="Texture2D" uid="uid://do36lo1b4wecl" path="res://upgrade/upgrade1/paper_panel_360_x_150.png" id="8_rj11h"]
+[ext_resource type="Texture2D" uid="uid://b8hog6hw2j1y8" path="res://upgrade/upgrade1/output-onlinepngtools.png" id="9_rj11h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_frtcy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41ewf"]
+shader = ExtResource("3_liyct")
+shader_parameter/period = 2.6
+shader_parameter/width = 0.1
+shader_parameter/strength = 1.3
+shader_parameter/shine_color = Color(1, 0.92, 0.7, 1)
+
+[node name="Control" type="Control" unique_id=183133623]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eunhr")
+
+[node name="Label" type="Label" parent="." unique_id=659485601]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 128.0
+offset_bottom = 58.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.80194306, 0.65212667, 0.5655589, 1)
+theme_override_fonts/font = ExtResource("2_rj11h")
+theme_override_font_sizes/font_size = 35
+text = "cookie: "
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1998111623]
+material = SubResource("ShaderMaterial_frtcy")
+layout_mode = 0
+offset_left = 304.0
+offset_top = 121.0
+offset_right = 679.0
+offset_bottom = 496.0
+pivot_offset = Vector2(187.5, 187.5)
+texture = ExtResource("2_eunhr")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=850463174]
+material = SubResource("ShaderMaterial_41ewf")
+layout_mode = 0
+offset_left = 370.0
+offset_top = 181.0
+offset_right = 620.0
+offset_bottom = 431.0
+pivot_offset = Vector2(125, 125)
+texture_normal = ExtResource("4_ib3t1")
+
+[node name="upgrade_panel" type="Control" parent="." unique_id=732628697]
+anchors_preset = 0
+offset_left = 814.0
+offset_top = 5.0
+offset_right = 1149.0
+offset_bottom = 652.0
+script = ExtResource("5_k3v36")
+
+[node name="panel_upgrade" type="TextureRect" parent="upgrade_panel" unique_id=1684946995]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 345.0
+offset_bottom = 656.0
+texture = ExtResource("7_rj11h")
+expand_mode = 1
+
+[node name="up1_icon" type="TextureButton" parent="upgrade_panel" unique_id=1776495489]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 4.000001
+offset_right = 382.0
+offset_bottom = 154.0
+scale = Vector2(0.8, 0.4)
+texture_normal = ExtResource("8_rj11h")
+texture_hover = ExtResource("9_rj11h")
+
+[node name="Label" type="Label" parent="upgrade_panel/up1_icon" unique_id=207784588]
+layout_mode = 0
+offset_left = -1.2500191
+offset_top = 12.499994
+offset_right = 513.75
+offset_bottom = 108.5
+scale = Vector2(0.7, 1.2)
+theme_override_colors/font_color = Color(0.28627452, 0.2, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_rj11h")
+theme_override_font_sizes/font_size = 70
+text = "upgrade1"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="up2_icon" type="TextureButton" parent="upgrade_panel" unique_id=1897859247]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 71.0
+offset_right = 384.00006
+offset_bottom = 221.0
+scale = Vector2(0.8, 0.4)
+texture_normal = ExtResource("8_rj11h")
+texture_hover = ExtResource("9_rj11h")
+
+[node name="TextureRect" type="TextureRect" parent="upgrade_panel/up2_icon" unique_id=2011646193]
+layout_mode = 0
+offset_left = -3.7499995
+offset_top = 169.99998
+offset_right = 356.25
+offset_bottom = 424.99994
+mouse_filter = 2
+texture = ExtResource("9_rj11h")
+
+[node name="Label" type="Label" parent="upgrade_panel/up2_icon" unique_id=54363869]
+layout_mode = 0
+offset_left = 61.250023
+offset_top = 12.499973
+offset_right = 392.25003
+offset_bottom = 111.071396
+scale = Vector2(0.7, 1.2)
+theme_override_colors/font_color = Color(0.28627452, 0.2, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_rj11h")
+theme_override_font_sizes/font_size = 70
+text = "upgrade 2"

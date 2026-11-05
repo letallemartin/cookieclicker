@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dcit378lqvogr"]
+
+[ext_resource type="Script" uid="uid://bgac100hf72at" path="res://auto_clickers/auto_cookie.gd" id="1_8i7nx"]
+[ext_resource type="Script" uid="uid://brxt1p5er0tmk" path="res://auto_clickers/cook.gd" id="2_k0j4p"]
+[ext_resource type="Texture2D" uid="uid://b8m6citce3lcx" path="res://auto_clickers/tools_11.png" id="3_7p7x2"]
+
+[node name="autocook" type="Node2D" unique_id=1683891292]
+script = ExtResource("1_8i7nx")
+
+[node name="cook" type="Control" parent="." unique_id=251401543]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_k0j4p")
+
+[node name="TextureRect" type="TextureRect" parent="cook" unique_id=1608679299]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -30.000004
+offset_right = 30.0
+offset_bottom = 29.999996
+rotation = -5.164429
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_7p7x2")
